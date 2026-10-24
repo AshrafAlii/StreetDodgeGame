@@ -2,7 +2,7 @@
 
 A fast-paced 3D endless dodger built with **Vite** and **Three.js**. Drive your car down an infinite road, weave between blocks, collect coins to charge your boost, and grab score pads — survive as long as you can.
 
-🔗 **Live demo:** https://ashrafalii.github.io/StreetDodgeGame/
+🔗 **Live demo:** https://streetdodge.netlify.app/
 
 ---
 
