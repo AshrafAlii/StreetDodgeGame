@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Street Dodge</title>
+<style>
+  html,body{margin:0;height:100%;overflow:hidden;background:#111;font-family:system-ui,sans-serif;color:#fff;touch-action:none}
+  canvas{display:block}
+  #hud{position:fixed;top:12px;left:16px;font-size:20px;font-weight:700;text-shadow:0 2px 6px #000}
+  #hud small{display:block;font-weight:400;opacity:.8;font-size:14px}
+  #overlay{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(0,0,0,.55);text-align:center;padding:20px}
+  #overlay h1{margin:0 0 8px;font-size:44px;letter-spacing:2px}
+  #overlay p{margin:4px 0 18px;opacity:.85;max-width:420px}
+  button{font-size:18px;padding:12px 28px;border:0;border-radius:10px;background:#ffcc00;color:#111;font-weight:700;cursor:pointer}
+  #boostWrap{position:fixed;bottom:22px;left:50%;transform:translateX(-50%);width:min(320px,60vw);text-align:center;font-size:13px;font-weight:700;letter-spacing:2px;text-shadow:0 1px 4px #000}
+  #boostBar{height:16px;border-radius:9px;background:rgba(255,255,255,.18);border:2px solid #fff;overflow:hidden;margin-bottom:4px}
+  #boostFill{height:100%;width:0%;background:linear-gradient(90deg,#ff7a00,#ffd000);transition:width .1s}
+  #boostBar.on{box-shadow:0 0 14px #ffb300}
+  #boostBar.full #boostFill{background:linear-gradient(90deg,#00e0ff,#7dffb0)}
+  #boostBtn{position:fixed;bottom:18px;right:18px;width:84px;height:84px;border-radius:50%;font-size:14px;padding:0;background:#ff7a00;color:#fff;border:3px solid #fff;user-select:none;-webkit-user-select:none}
+  #boostBtn:active,#boostBtn.on{background:#ffd000;color:#111}
+  .hidden{display:none!important}
+</style>
+</head>
+<body>
+<div id="hud"><span id="score">0</span><small id="best"></small><small id="coins">🪙 0</small></div>
+<div id="boostWrap"><div id="boostBar"><div id="boostFill"></div></div><span id="boostLabel">BOOST</span></div>
+<button id="boostBtn">BOOST</button>
+<div id="overlay">
+  <h1 id="title">STREET DODGE</h1>
+  <p id="msg">Dodge the concrete blocks. Collect coins to fill the boost bar, grab graffiti pads for bonus points.<br>Steer: ← → / A D (or tap left / right side). Boost: hold Shift / Space (or the boost button).</p>
+  <button id="go">Play</button>
+</div>
+<script type="module" src="/src/main.js"></script>
+</body>
+</html>
